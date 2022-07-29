@@ -10,7 +10,7 @@ This is a compilation of the coding questions (found on various websites includi
 -- add col user_id and col download_cnt
 -- from this table, select date, non-paying downloads, paying downloads
 
-
+```
 select
   date,
   sum(case when acc_status='no' then download_cnt else null end) as non_paying_downloads,
@@ -39,3 +39,4 @@ group by date
 having sum(case when acc_status='no' then download_cnt else null end) > sum(case when acc_status='yes' then download_cnt else null end)
 order by date asc  
 ;
+```
