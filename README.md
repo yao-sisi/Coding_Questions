@@ -4,13 +4,13 @@ This is a compilation of the coding questions (found on various websites includi
 
 - [StrataScratch - Microsoft - Premium vs Freemium](https://platform.stratascratch.com/coding/10300-premium-vs-freemium?code_type=3)
 
-- Code:
+- Code (MySQL):
 
+```
 -- pull date from ms_download_facts, add col acc_status (paying/non-paying)
 -- add col user_id and col download_cnt
 -- from this table, select date, non-paying downloads, paying downloads
 
-```
 select
   date,
   sum(case when acc_status='no' then download_cnt else null end) as non_paying_downloads,
