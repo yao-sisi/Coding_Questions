@@ -41,6 +41,33 @@ order by date asc
 ;
 ```
 
+- [StrataScratch - Amazon - Monthly Percentage Difference (Hard)](https://platform.stratascratch.com/coding/10319-monthly-percentage-difference?code_type=3)
+
+Code (MySQL):
+
+```
+-- group by month(created_at) as year_month
+-- sum up value as curr_mo_rev
+-- shift curr_mo_rev down by one row, label as prev_mo_rev
+-- calculate revenue_diff_pct
+
+select
+  yr_mo,
+  round(((curr_mo_rev - prev_mo_rev)/prev_mo_rev)*100,2) as revenue_diff_pct
+from
+(select
+  date_format(created_at, "%Y-%m") as yr_mo,
+  sum(value) as curr_mo_rev,
+  lag(sum(value),1,null) over () as prev_mo_rev
+from
+  sf_transactions
+group by
+  date_format(created_at, "%Y-%m")
+order by
+  date_format(created_at, "%Y-%m") asc) as t
+;
+```
+
 - [StrataScratch - DoorDash - Workers with the Highest Salaries (Medium)](https://platform.stratascratch.com/coding/10353-workers-with-the-highest-salaries?code_type=3)
 
 Code (MySQL):
