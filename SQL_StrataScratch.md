@@ -1,6 +1,4 @@
-## SQL_Coding_Questions
-
-This is a compilation of the coding questions (found on various websites including Stratascratch and Leetcode) that I have solved.
+## SQL Coding Questions (StrataScratch)
 
 - [StrataScratch - Microsoft - Premium vs Freemium (Hard)](https://platform.stratascratch.com/coding/10300-premium-vs-freemium?code_type=3)
 
