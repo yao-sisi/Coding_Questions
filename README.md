@@ -4,7 +4,7 @@ This is a compilation of the coding questions (found on various websites includi
 
 - [StrataScratch - Microsoft - Premium vs Freemium](https://platform.stratascratch.com/coding/10300-premium-vs-freemium?code_type=3)
 
-- Code (MySQL):
+Code (MySQL):
 
 ```
 -- pull date from ms_download_facts, add col acc_status (paying/non-paying)
