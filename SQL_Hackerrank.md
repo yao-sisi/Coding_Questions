@@ -74,3 +74,28 @@ where
   on s.rnk=a.rnk
 ;
 ```
+
+- [Advanced Select - Binery Tree Nodes (Medium)](https://www.hackerrank.com/challenges/binary-search-tree-1/problem?isFullScreen=true)
+
+Code (MySQL):
+
+```
+/*
+Root: when a node has no parent - when N = x, P is null
+Inner: when a node has both parent and children - x appears in both col N and P
+Leaf: when a node has no children - x does not appear in col P
+*/
+
+
+select
+  N,
+  case when P is null then 'Root'  
+       when N in (select P from BST) then "Inner" 
+       else 'Leaf' end as T
+from 
+  BST
+order by
+  N asc
+;
+```
+
